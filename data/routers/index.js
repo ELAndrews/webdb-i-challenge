@@ -1,5 +1,5 @@
 const express = require("express");
-const accountRouters = require("./accountRouter");
+const accountRouters = require("./account-routers");
 
 const router = express.Router();
 
