@@ -10,6 +10,12 @@ function getAccountById(id) {
     .first();
 }
 
+function getUniqueNameArray() {
+  return db("accounts")
+    .distinct("name")
+    .pluck("name");
+}
+
 function insertNewAccount({ name, budget }) {
   return db("accounts").insert({ name, budget });
 }
@@ -29,6 +35,7 @@ function deleteAccountById(id) {
 module.exports = {
   getAllAccounts,
   getAccountById,
+  getUniqueNameArray,
   insertNewAccount,
   updateAccountById,
   deleteAccountById
